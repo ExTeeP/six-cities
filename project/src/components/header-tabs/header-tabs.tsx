@@ -1,38 +1,49 @@
-function HeaderTabs() {
+type HeaderTabItem = {
+  name: string,
+  href: string,
+  isActive?: boolean,
+}
+
+function HeaderTabs(): JSX.Element {
+  const tabsItems: HeaderTabItem[] = [
+    {
+      name: 'Paris',
+      href: '#',
+      isActive: false,
+    },
+    {
+      name: 'Cologne',
+      href: '#',
+      isActive: false,
+    },
+    {
+      name: 'Brussels',
+      href: '#',
+      isActive: false,
+    },
+    {
+      name: 'Amsterdam',
+      href: '#',
+      isActive: true,
+    },
+    {
+      name: 'Dusseldorf',
+      href: '#',
+      isActive: false,
+    },
+  ];
+
   return (
     <div className="tabs">
       <section className="locations container">
         <ul className="locations__list tabs__list">
-          <li className="locations__item">
-            <a className="locations__item-link tabs__item" href="#">
-              <span>Paris</span>
-            </a>
-          </li>
-          <li className="locations__item">
-            <a className="locations__item-link tabs__item" href="#">
-              <span>Cologne</span>
-            </a>
-          </li>
-          <li className="locations__item">
-            <a className="locations__item-link tabs__item" href="#">
-              <span>Brussels</span>
-            </a>
-          </li>
-          <li className="locations__item">
-            <a className="locations__item-link tabs__item tabs__item--active">
-              <span>Amsterdam</span>
-            </a>
-          </li>
-          <li className="locations__item">
-            <a className="locations__item-link tabs__item" href="#">
-              <span>Hamburg</span>
-            </a>
-          </li>
-          <li className="locations__item">
-            <a className="locations__item-link tabs__item" href="#">
-              <span>Dusseldorf</span>
-            </a>
-          </li>
+          {tabsItems.map((it) => (
+            <li className="locations__item" key={Math.random() + Math.random()}>
+              <a className={`locations__item-link tabs__item ${it.isActive && 'tabs__item--active'}`} href={it.href}>
+                <span>{it.name}</span>
+              </a>
+            </li>
+          ))}
         </ul>
       </section>
     </div>
