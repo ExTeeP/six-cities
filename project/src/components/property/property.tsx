@@ -1,6 +1,6 @@
 import Header from '../header/header';
 
-function Property() {
+function Property(): JSX.Element {
   return (
     <div className="page">
       <Header />

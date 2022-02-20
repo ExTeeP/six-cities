@@ -1,7 +1,7 @@
 import Header from '../header/header';
 import HeaderTabs from '../header-tabs/header-tabs';
 
-function MainEmpty() {
+function MainEmpty(): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <Header />

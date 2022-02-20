@@ -1,6 +1,6 @@
 import Header from '../header/header';
 
-function PropertyNoLogged() {
+function PropertyNoLogged(): JSX.Element {
   return (
 
     <div className="page">

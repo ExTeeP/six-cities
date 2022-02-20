@@ -1,7 +1,7 @@
 import Footer from '../footer/footer';
 import Header from '../header/header';
 
-function Favorites() {
+function Favorites(): JSX.Element {
   return (
     <div className="page">
       <Header />
